@@ -1,6 +1,6 @@
 codeunit 50110 "ADD_DynamicRequestPageMgt"
 {
-    procedure RunReqPage(InValues: Record ADD_TempAllFields temporary; var OutValues: Record ADD_TempAllFields temporary)
+    procedure RunReqPage(InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
     var
         DynamicReqPage: Report ADD_DynamicRequestPage;
         ReportParams: Text;

@@ -42,18 +42,18 @@ report 50110 "ADD_DynamicRequestPage"
     }
 
     var
-        TempAllFields: Record ADD_TempAllFields temporary;
+        TempAllFields: Record ADD_DynamicReqPageFields temporary;
         Capt: Text;
         Capt2: Text;
         IsBigInteger1Set: Boolean;
         IsBigInteger2Set: Boolean;
 
-    procedure SetTempAllFields(var TempAllFieldsToSet: Record ADD_TempAllFields temporary)
+    procedure SetTempAllFields(var TempAllFieldsToSet: Record ADD_DynamicReqPageFields temporary)
     begin
         this.TempAllFields := TempAllFieldsToSet;
     end;
 
-    procedure GetValuesFromRequestPage(var TempAllFieldsToGet: Record ADD_TempAllFields temporary; ReqPageParams: Text)
+    procedure GetValuesFromRequestPage(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; ReqPageParams: Text)
     var
         XmlDoc: XmlDocument;
         FieldsList: XmlNodeList;
@@ -79,7 +79,7 @@ report 50110 "ADD_DynamicRequestPage"
         TempAllFieldsToGet.Insert();
     end;
 
-    local procedure SetValueFromReqPageToRec(var TempAllFieldsToGet: Record ADD_TempAllFields temporary; FieldName: Text; FieldValue: Text)
+    local procedure SetValueFromReqPageToRec(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; FieldName: Text; FieldValue: Text)
     var
         DataTypeMgt: codeunit "Data Type Management";
         RecVar: Variant;

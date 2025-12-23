@@ -17,8 +17,8 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
 
                     trigger OnAction()
                     var
-                        TempInValues: Record ADD_TempAllFields temporary;
-                        TempOutValues: Record ADD_TempAllFields temporary;
+                        TempInValues: Record ADD_DynamicReqPageFields temporary;
+                        TempOutValues: Record ADD_DynamicReqPageFields temporary;
                         DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
                     begin
                         TempInValues.Init();
