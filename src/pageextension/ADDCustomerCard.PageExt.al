@@ -22,8 +22,10 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
                         DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
                     begin
                         TempInValues.Init();
-                        TempInValues.Validate(BigInteger1, 11);
-                        TempInValues.Validate(BigInteger2, 22);
+                        TempInValues.BigInteger1 := 11;
+                        TempInValues.BigInteger2 := 22;
+                        TempInValues.CaptionBigInteger1 := 'Big number 1';
+                        TempInValues.CaptionBigInteger2 := 'Big number 2';
                         TempInValues.Insert();
                         DynamicReqPageMgt.RunReqPage(TempInValues, TempOutValues);
                         Message(Format(TempOutValues));

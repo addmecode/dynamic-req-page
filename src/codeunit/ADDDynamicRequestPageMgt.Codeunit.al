@@ -36,7 +36,7 @@ codeunit 50110 "ADD_DynamicRequestPageMgt"
     begin
         DataTypeMgt.GetRecordRef(OutValues, RecRef);
         DataTypeMgt.FindFieldByName(RecRef, FldRef, FieldName);
-        if not InValues.IsFieldSet(FldRef.Number) then
+        if not InValues.IsFieldSetByName(FldRef.Name) then
             exit;
 
         FldRef.Validate(FieldValue);
@@ -63,26 +63,18 @@ codeunit 50110 "ADD_DynamicRequestPageMgt"
         XmlDoc.SelectNodes('//Options//Field', FieldNodes);
     end;
 
-    internal procedure MarkFieldAsSet(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldNo: Integer)
+    procedure IsFieldSetByName(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldName: Text): Boolean
     var
-        AllSetValues: List of [Text];
+        DataTypeMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        CaptFldRef: FieldRef;
+        CaptFldName: Text;
+        CaptFldValue: Text;
     begin
-        if DynamicReqPageFields."Set Values" = '' then begin
-            DynamicReqPageFields."Set Values" := FieldNo.ToText();
-            exit;
-        end;
-
-        AllSetValues := DynamicReqPageFields."Set Values".Split(',');
-        if AllSetValues.Contains(FieldNo.ToText()) then
-            exit;
-        DynamicReqPageFields."Set Values" += ',' + FieldNo.ToText();
-    end;
-
-    procedure IsFieldSet(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldNo: Integer): Boolean
-    var
-        AllSetValues: List of [Text];
-    begin
-        AllSetValues := DynamicReqPageFields."Set Values".Split(',');
-        exit(AllSetValues.Contains(FieldNo.ToText()));
+        CaptFldName := 'Caption' + FieldName;
+        DataTypeMgt.GetRecordRef(DynamicReqPageFields, RecRef);
+        DataTypeMgt.FindFieldByName(RecRef, CaptFldRef, CaptFldName);
+        CaptFldValue := CaptFldRef.Value;
+        exit(CaptFldValue <> '');
     end;
 }
