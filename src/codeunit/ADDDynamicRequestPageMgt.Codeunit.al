@@ -7,35 +7,40 @@ codeunit 50110 "ADD_DynamicRequestPageMgt"
     begin
         DynamicReqPage.SetTempAllFields(InValues);
         ReportParams := DynamicReqPage.RunRequestPage(ReportParams);
-        this.GetValuesFromRequestPage(OutValues, ReportParams);
+        this.GetValuesFromRequestPage(ReportParams, InValues, OutValues);
     end;
 
-    procedure GetValuesFromRequestPage(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; ReqPageParams: Text)
+    procedure GetValuesFromRequestPage(ReqPageParams: Text; InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
     var
         FieldNodes: XmlNodeList;
         SingleFieldNode: XmlNode;
         FieldName: Text;
         FieldValue: Text;
     begin
-        TempAllFieldsToGet.Init();
+        OutValues.Init();
         if ReqPageParams = '' then
             exit;
         this.GetFieldNodesFromReqPageParams(ReqPageParams, FieldNodes);
         foreach SingleFieldNode in FieldNodes do begin
             this.GetFieldNameAndValueFromFieldNode(SingleFieldNode, FieldName, FieldValue);
-            this.SetValueFromReqPageToRec(TempAllFieldsToGet, FieldName, FieldValue);
+            this.SetValueFromReqPageToRec(FieldName, FieldValue, InValues, OutValues);
         end;
-        TempAllFieldsToGet.Insert();
+        OutValues.Insert();
     end;
 
-    local procedure SetValueFromReqPageToRec(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; FieldName: Text; FieldValue: Text)
+    local procedure SetValueFromReqPageToRec(FieldName: Text; FieldValue: Text; InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
     var
-        DataTypeMgt: codeunit "Data Type Management";
-        RecVar: Variant;
+        DataTypeMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FldRef: FieldRef;
     begin
-        RecVar := TempAllFieldsToGet;
-        DataTypeMgt.ValidateFieldValue(RecVar, FieldName, FieldValue);
-        TempAllFieldsToGet := RecVar;
+        DataTypeMgt.GetRecordRef(OutValues, RecRef);
+        DataTypeMgt.FindFieldByName(RecRef, FldRef, FieldName);
+        if not InValues.IsFieldSet(FldRef.Number) then
+            exit;
+
+        FldRef.Validate(FieldValue);
+        RecRef.SetTable(OutValues);
     end;
 
     local procedure GetFieldNameAndValueFromFieldNode(FieldNode: XmlNode; var FieldName: Text; var FieldValue: Text)
