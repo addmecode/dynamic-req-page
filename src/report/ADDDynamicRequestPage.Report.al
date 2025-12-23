@@ -52,40 +52,4 @@ report 50110 "ADD_DynamicRequestPage"
     begin
         this.TempAllFields := TempAllFieldsToSet;
     end;
-
-    procedure GetValuesFromRequestPage(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; ReqPageParams: Text)
-    var
-        XmlDoc: XmlDocument;
-        FieldsList: XmlNodeList;
-        FieldNode: XmlNode;
-        FieldName: Text;
-        FieldValue: Text;
-        XmlAttrColl: XmlAttributeCollection;
-        XmlAttr: XmlAttribute;
-    begin
-        TempAllFieldsToGet.Init();
-        if ReqPageParams = '' then
-            exit;
-        XmlDocument.ReadFrom(ReqPageParams, XmlDoc);
-        XmlDoc.SelectNodes('//Options//Field', FieldsList);
-        foreach FieldNode in FieldsList do begin
-            XmlAttrColl := FieldNode.AsXmlElement().Attributes();
-            XmlAttrColl.Get('name', XmlAttr);
-            FieldName := XmlAttr.Value();
-            FieldName := FieldName.Substring(FieldName.IndexOf('.') + 1);
-            FieldValue := FieldNode.AsXmlElement().InnerText();
-            this.SetValueFromReqPageToRec(TempAllFieldsToGet, FieldName, FieldValue);
-        end;
-        TempAllFieldsToGet.Insert();
-    end;
-
-    local procedure SetValueFromReqPageToRec(var TempAllFieldsToGet: Record ADD_DynamicReqPageFields temporary; FieldName: Text; FieldValue: Text)
-    var
-        DataTypeMgt: codeunit "Data Type Management";
-        RecVar: Variant;
-    begin
-        RecVar := TempAllFieldsToGet;
-        DataTypeMgt.ValidateFieldValue(RecVar, FieldName, FieldValue);
-        TempAllFieldsToGet := RecVar;
-    end;
 }

@@ -510,25 +510,16 @@ table 50110 "ADD_DynamicReqPageFields"
 
     local procedure MarkFieldAsSet(FieldNo: Integer)
     var
-        AllSetValues: List of [Text];
+        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
     begin
-        if Rec."Set Values" = '' then begin
-            Rec."Set Values" := FieldNo.ToText();
-            exit;
-        end;
-
-        AllSetValues := Rec."Set Values".Split(',');
-        if AllSetValues.Contains(FieldNo.ToText()) then
-            exit;
-        Rec."Set Values" += ',' + FieldNo.ToText();
+        DynamicReqPageMgt.MarkFieldAsSet(Rec, FieldNo);
     end;
 
     procedure IsFieldSet(FieldNo: Integer): Boolean
     var
-        AllSetValues: List of [Text];
+        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
     begin
-        AllSetValues := Rec."Set Values".Split(',');
-        exit(AllSetValues.Contains(FieldNo.ToText()));
+        exit(DynamicReqPageMgt.IsFieldSet(Rec, FieldNo));
     end;
 
 }

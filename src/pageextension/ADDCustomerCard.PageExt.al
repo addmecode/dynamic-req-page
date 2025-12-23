@@ -22,7 +22,7 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
                         DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
                     begin
                         TempInValues.Init();
-                        TempInValues.Validate(BigInteger1, 011);
+                        TempInValues.Validate(BigInteger1, 11);
                         TempInValues.Validate(BigInteger2, 22);
                         TempInValues.Insert();
                         DynamicReqPageMgt.RunReqPage(TempInValues, TempOutValues);
