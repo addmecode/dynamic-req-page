@@ -11,10 +11,6 @@ table 50110 "ADD_DynamicReqPageFields"
             Caption = 'Entry No.';
             AutoIncrement = true;
         }
-        field(2; "Set Values"; Text[2048]) //TODO it is limited to 2048
-        {
-            Caption = 'Set Values';
-        }
         field(10; BigInteger1; BigInteger)
         {
             Caption = 'BigInteger1';
@@ -265,6 +261,238 @@ table 50110 "ADD_DynamicReqPageFields"
         field(201; CaptionBigInteger2; Text[2048])
         {
             Caption = 'Caption BigInteger2';
+        }
+        field(212; CaptionBigInteger3; Text[2048])
+        {
+            Caption = 'Caption BigInteger3';
+        }
+        field(213; CaptionBigInteger4; Text[2048])
+        {
+            Caption = 'Caption BigInteger4';
+        }
+        field(214; CaptionBigInteger5; Text[2048])
+        {
+            Caption = 'Caption BigInteger5';
+        }
+        field(220; CaptionBoolean1; Text[2048])
+        {
+            Caption = 'Caption Boolean1';
+        }
+        field(221; CaptionBoolean2; Text[2048])
+        {
+            Caption = 'Caption Boolean2';
+        }
+        field(222; CaptionBoolean3; Text[2048])
+        {
+            Caption = 'Caption Boolean3';
+        }
+        field(223; CaptionBoolean4; Text[2048])
+        {
+            Caption = 'Caption Boolean4';
+        }
+        field(224; CaptionBoolean5; Text[2048])
+        {
+            Caption = 'Caption Boolean5';
+        }
+        field(230; CaptionCode1; Text[2048])
+        {
+            Caption = 'Caption Code1';
+        }
+        field(231; CaptionCode2; Text[2048])
+        {
+            Caption = 'Caption Code2';
+        }
+        field(232; CaptionCode3; Text[2048])
+        {
+            Caption = 'Caption Code3';
+        }
+        field(233; CaptionCode4; Text[2048])
+        {
+            Caption = 'Caption Code4';
+        }
+        field(234; CaptionCode5; Text[2048])
+        {
+            Caption = 'Caption Code5';
+        }
+        field(240; CaptionDate1; Text[2048])
+        {
+            Caption = 'Caption Date1';
+        }
+        field(241; CaptionDate2; Text[2048])
+        {
+            Caption = 'Caption Date2';
+        }
+        field(242; CaptionDate3; Text[2048])
+        {
+            Caption = 'Caption Date3';
+        }
+        field(243; CaptionDate4; Text[2048])
+        {
+            Caption = 'Caption Date4';
+        }
+        field(244; CaptionDate5; Text[2048])
+        {
+            Caption = 'Caption Date5';
+        }
+        field(250; CaptionDateFormula1; Text[2048])
+        {
+            Caption = 'Caption DateFormula1';
+        }
+        field(251; CaptionDateFormula2; Text[2048])
+        {
+            Caption = 'Caption DateFormula2';
+        }
+        field(252; CaptionDateFormula3; Text[2048])
+        {
+            Caption = 'Caption DateFormula3';
+        }
+        field(253; CaptionDateFormula4; Text[2048])
+        {
+            Caption = 'Caption DateFormula4';
+        }
+        field(254; CaptionDateFormula5; Text[2048])
+        {
+            Caption = 'Caption DateFormula5';
+        }
+        field(260; CaptionDateTime1; Text[2048])
+        {
+            Caption = 'Caption DateTime1';
+        }
+        field(261; CaptionDateTime2; Text[2048])
+        {
+            Caption = 'Caption DateTime2';
+        }
+        field(262; CaptionDateTime3; Text[2048])
+        {
+            Caption = 'Caption DateTime3';
+        }
+        field(263; CaptionDateTime4; Text[2048])
+        {
+            Caption = 'Caption DateTime4';
+        }
+        field(264; CaptionDateTime5; Text[2048])
+        {
+            Caption = 'Caption DateTime5';
+        }
+        field(270; CaptionDecimal1; Text[2048])
+        {
+            Caption = 'Caption Decimal1';
+        }
+        field(271; CaptionDecimal2; Text[2048])
+        {
+            Caption = 'Caption Decimal2';
+        }
+        field(272; CaptionDecimal3; Text[2048])
+        {
+            Caption = 'Caption Decimal3';
+        }
+        field(273; CaptionDecimal4; Text[2048])
+        {
+            Caption = 'Caption Decimal4';
+        }
+        field(274; CaptionDecimal5; Text[2048])
+        {
+            Caption = 'Caption Decimal5';
+        }
+        field(280; CaptionDuration1; Text[2048])
+        {
+            Caption = 'Caption Duration1';
+        }
+        field(281; CaptionDuration2; Text[2048])
+        {
+            Caption = 'Caption Duration2';
+        }
+        field(282; CaptionDuration3; Text[2048])
+        {
+            Caption = 'Caption Duration3';
+        }
+        field(283; CaptionDuration4; Text[2048])
+        {
+            Caption = 'Caption Duration4';
+        }
+        field(284; CaptionDuration5; Text[2048])
+        {
+            Caption = 'Caption Duration5';
+        }
+        field(290; CaptionGuid1; Text[2048])
+        {
+            Caption = 'Caption Guid1';
+        }
+        field(291; CaptionGuid2; Text[2048])
+        {
+            Caption = 'Caption Guid2';
+        }
+        field(292; CaptionGuid3; Text[2048])
+        {
+            Caption = 'Caption Guid3';
+        }
+        field(293; CaptionGuid4; Text[2048])
+        {
+            Caption = 'Caption Guid4';
+        }
+        field(294; CaptionGuid5; Text[2048])
+        {
+            Caption = 'Caption Guid5';
+        }
+        field(300; CaptionInteger1; Text[2048])
+        {
+            Caption = 'Caption Integer1';
+        }
+        field(301; CaptionInteger2; Text[2048])
+        {
+            Caption = 'Caption Integer2';
+        }
+        field(302; CaptionInteger3; Text[2048])
+        {
+            Caption = 'Caption Integer3';
+        }
+        field(303; CaptionInteger4; Text[2048])
+        {
+            Caption = 'Caption Integer4';
+        }
+        field(304; CaptionInteger5; Text[2048])
+        {
+            Caption = 'Caption Integer5';
+        }
+        field(310; CaptionText1; Text[2048])
+        {
+            Caption = 'Caption Text1';
+        }
+        field(311; CaptionText2; Text[2048])
+        {
+            Caption = 'Caption Text2';
+        }
+        field(312; CaptionText3; Text[2048])
+        {
+            Caption = 'Caption Text3';
+        }
+        field(313; CaptionText4; Text[2048])
+        {
+            Caption = 'Caption Text4';
+        }
+        field(314; CaptionText5; Text[2048])
+        {
+            Caption = 'Caption Text5';
+        }
+        field(320; CaptionTime1; Text[2048])
+        {
+            Caption = 'Caption Time1';
+        }
+        field(321; CaptionTime2; Text[2048])
+        {
+            Caption = 'Caption Time2';
+        }
+        field(322; CaptionTime3; Text[2048])
+        {
+            Caption = 'Caption Time3';
+        }
+        field(323; CaptionTime4; Text[2048])
+        {
+            Caption = 'Caption Time4';
+        }
+        field(324; CaptionTime5; Text[2048])
+        {
+            Caption = 'Caption Time5';
         }
 
     }
