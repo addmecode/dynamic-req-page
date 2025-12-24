@@ -1,4 +1,4 @@
-codeunit 50110 "ADD_DynamicRequestPageMgt"
+codeunit 50110 ADD_DynamicRequestPageMgt
 {
     procedure RunReqPage(var InValues: Record ADD_DynamicReqPageFields temporary)
     var
@@ -33,7 +33,7 @@ codeunit 50110 "ADD_DynamicRequestPageMgt"
 
     internal procedure FindLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary): Integer
     var
-        LastRec: Record "ADD_DynamicReqPageFields";
+        LastRec: Record ADD_DynamicReqPageFields;
     begin
         LastRec.Copy(DynamicReqPageFields, true);
         if LastRec.FindLast() then

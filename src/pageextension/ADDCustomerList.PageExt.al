@@ -1,16 +1,15 @@
-pageextension 50110 "ADD_CustomerList" extends "Customer List"
+pageextension 50110 ADD_CustomerList extends "Customer List"
 {
-
     actions
     {
         addafter("Customer - Order Summary")
         {
             action(ADDGetCustomersListWithProvidedPaymDisc)
             {
-                Caption = 'Get Customers List With Provided Payment Disc';
-                ToolTip = 'Get Customers List With Provided Payment Disc';
                 ApplicationArea = All;
+                Caption = 'Get Customers List With Provided Payment Disc';
                 Image = Filter;
+                ToolTip = 'Get Customers List With Provided Payment Disc';
 
                 trigger OnAction()
                 begin
@@ -20,22 +19,20 @@ pageextension 50110 "ADD_CustomerList" extends "Customer List"
         }
         addafter("Customer - Order Summary_Promoted")
         {
-            actionref(ADDGetCustomersListWithProvidedPaymDisc_Promoted; ADDGetCustomersListWithProvidedPaymDisc)
-            {
-            }
+            actionref(ADDGetCustomersListWithProvidedPaymDisc_Promoted; ADDGetCustomersListWithProvidedPaymDisc) { }
         }
     }
 
     local procedure GetCustomersListWithProvidedPaymDisc()
     var
+        TempDynamicReqPageFields: Record ADD_DynamicReqPageFields temporary;
         Cust: Record Customer;
         PaymTerms: Record "Payment Terms";
-        TempDynamicReqPageFields: Record ADD_DynamicReqPageFields temporary;
         DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
-        CustDict: Dictionary of [Code[20], Code[10]];
-        DictAsText: Text;
         CustNo: Code[20];
+        CustDict: Dictionary of [Code[20], Code[10]];
         CustNotFoundErr: Label 'Customers with Payment Discount >= %1 and <= %2 not found', Comment = '%1 and %2 are payment discounts';
+        DictAsText: Text;
     begin
         TempDynamicReqPageFields.Init();
         TempDynamicReqPageFields.Caption := 'Get Customers list with provided Payment Discount';

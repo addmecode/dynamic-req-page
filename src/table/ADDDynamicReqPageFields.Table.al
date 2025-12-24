@@ -1,7 +1,7 @@
-table 50110 "ADD_DynamicReqPageFields"
+table 50110 ADD_DynamicReqPageFields
 {
     Caption = 'Dynamic Req Page Fields';
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
     TableType = Temporary;
 
     fields
@@ -495,7 +495,6 @@ table 50110 "ADD_DynamicReqPageFields"
         {
             Caption = 'Caption Time5';
         }
-
     }
     keys
     {
@@ -523,5 +522,4 @@ table 50110 "ADD_DynamicReqPageFields"
     begin
         exit(DynamicReqPageMgt.IsFieldSetByName(Rec, FieldName));
     end;
-
 }

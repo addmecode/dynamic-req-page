@@ -1,14 +1,14 @@
-page 50100 "ADD_DynamicReqPage"
+page 50100 ADD_DynamicReqPage
 {
     ApplicationArea = All;
     Caption = 'Dynamic Request Page';
+    DeleteAllowed = false;
+    Editable = true;
+    InsertAllowed = false;
+    ModifyAllowed = true;
     PageType = Card;
     SourceTable = ADD_DynamicReqPageFields;
     SourceTableTemporary = true;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    Editable = true;
-    ModifyAllowed = true;
 
     layout
     {
@@ -21,372 +21,362 @@ page 50100 "ADD_DynamicReqPage"
                 field(BigInteger1; this.TempDynamicReqPageFields.BigInteger1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBigInteger1;
-                    Visible = this.IsBigInteger1Visible;
                     ToolTip = 'Specifies the value of the BigInteger1 field.', Comment = '%';
+                    Visible = this.IsBigInteger1Visible;
                 }
                 field(BigInteger2; this.TempDynamicReqPageFields.BigInteger2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBigInteger2;
-                    Visible = this.IsBigInteger2Visible;
                     ToolTip = 'Specifies the value of the BigInteger2 field.', Comment = '%';
+                    Visible = this.IsBigInteger2Visible;
                 }
                 field(BigInteger3; this.TempDynamicReqPageFields.BigInteger3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBigInteger3;
-                    Visible = this.IsBigInteger3Visible;
                     ToolTip = 'Specifies the value of the BigInteger3 field.', Comment = '%';
+                    Visible = this.IsBigInteger3Visible;
                 }
                 field(BigInteger4; this.TempDynamicReqPageFields.BigInteger4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBigInteger4;
-                    Visible = this.IsBigInteger4Visible;
                     ToolTip = 'Specifies the value of the BigInteger4 field.', Comment = '%';
+                    Visible = this.IsBigInteger4Visible;
                 }
                 field(BigInteger5; this.TempDynamicReqPageFields.BigInteger5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBigInteger5;
-                    Visible = this.IsBigInteger5Visible;
                     ToolTip = 'Specifies the value of the BigInteger5 field.', Comment = '%';
+                    Visible = this.IsBigInteger5Visible;
                 }
-
                 field(Boolean1; this.TempDynamicReqPageFields.Boolean1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBoolean1;
-                    Visible = this.IsBoolean1Visible;
                     ToolTip = 'Specifies the value of the Boolean1 field.', Comment = '%';
+                    Visible = this.IsBoolean1Visible;
                 }
                 field(Boolean2; this.TempDynamicReqPageFields.Boolean2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBoolean2;
-                    Visible = this.IsBoolean2Visible;
                     ToolTip = 'Specifies the value of the Boolean2 field.', Comment = '%';
+                    Visible = this.IsBoolean2Visible;
                 }
                 field(Boolean3; this.TempDynamicReqPageFields.Boolean3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBoolean3;
-                    Visible = this.IsBoolean3Visible;
                     ToolTip = 'Specifies the value of the Boolean3 field.', Comment = '%';
+                    Visible = this.IsBoolean3Visible;
                 }
                 field(Boolean4; this.TempDynamicReqPageFields.Boolean4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBoolean4;
-                    Visible = this.IsBoolean4Visible;
                     ToolTip = 'Specifies the value of the Boolean4 field.', Comment = '%';
+                    Visible = this.IsBoolean4Visible;
                 }
                 field(Boolean5; this.TempDynamicReqPageFields.Boolean5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionBoolean5;
-                    Visible = this.IsBoolean5Visible;
                     ToolTip = 'Specifies the value of the Boolean5 field.', Comment = '%';
+                    Visible = this.IsBoolean5Visible;
                 }
-
                 field(Code1; this.TempDynamicReqPageFields.Code1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionCode1;
-                    Visible = this.IsCode1Visible;
                     ToolTip = 'Specifies the value of the Code1 field.', Comment = '%';
+                    Visible = this.IsCode1Visible;
                 }
                 field(Code2; this.TempDynamicReqPageFields.Code2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionCode2;
-                    Visible = this.IsCode2Visible;
                     ToolTip = 'Specifies the value of the Code2 field.', Comment = '%';
+                    Visible = this.IsCode2Visible;
                 }
                 field(Code3; this.TempDynamicReqPageFields.Code3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionCode3;
-                    Visible = this.IsCode3Visible;
                     ToolTip = 'Specifies the value of the Code3 field.', Comment = '%';
+                    Visible = this.IsCode3Visible;
                 }
                 field(Code4; this.TempDynamicReqPageFields.Code4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionCode4;
-                    Visible = this.IsCode4Visible;
                     ToolTip = 'Specifies the value of the Code4 field.', Comment = '%';
+                    Visible = this.IsCode4Visible;
                 }
                 field(Code5; this.TempDynamicReqPageFields.Code5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionCode5;
-                    Visible = this.IsCode5Visible;
                     ToolTip = 'Specifies the value of the Code5 field.', Comment = '%';
+                    Visible = this.IsCode5Visible;
                 }
-
                 field(Date1; this.TempDynamicReqPageFields.Date1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDate1;
-                    Visible = this.IsDate1Visible;
                     ToolTip = 'Specifies the value of the Date1 field.', Comment = '%';
+                    Visible = this.IsDate1Visible;
                 }
                 field(Date2; this.TempDynamicReqPageFields.Date2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDate2;
-                    Visible = this.IsDate2Visible;
                     ToolTip = 'Specifies the value of the Date2 field.', Comment = '%';
+                    Visible = this.IsDate2Visible;
                 }
                 field(Date3; this.TempDynamicReqPageFields.Date3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDate3;
-                    Visible = this.IsDate3Visible;
                     ToolTip = 'Specifies the value of the Date3 field.', Comment = '%';
+                    Visible = this.IsDate3Visible;
                 }
                 field(Date4; this.TempDynamicReqPageFields.Date4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDate4;
-                    Visible = this.IsDate4Visible;
                     ToolTip = 'Specifies the value of the Date4 field.', Comment = '%';
+                    Visible = this.IsDate4Visible;
                 }
                 field(Date5; this.TempDynamicReqPageFields.Date5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDate5;
-                    Visible = this.IsDate5Visible;
                     ToolTip = 'Specifies the value of the Date5 field.', Comment = '%';
+                    Visible = this.IsDate5Visible;
                 }
-
                 field(DateFormula1; this.TempDynamicReqPageFields.DateFormula1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateFormula1;
-                    Visible = this.IsDateFormula1Visible;
                     ToolTip = 'Specifies the value of the DateFormula1 field.', Comment = '%';
+                    Visible = this.IsDateFormula1Visible;
                 }
                 field(DateFormula2; this.TempDynamicReqPageFields.DateFormula2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateFormula2;
-                    Visible = this.IsDateFormula2Visible;
                     ToolTip = 'Specifies the value of the DateFormula2 field.', Comment = '%';
+                    Visible = this.IsDateFormula2Visible;
                 }
                 field(DateFormula3; this.TempDynamicReqPageFields.DateFormula3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateFormula3;
-                    Visible = this.IsDateFormula3Visible;
                     ToolTip = 'Specifies the value of the DateFormula3 field.', Comment = '%';
+                    Visible = this.IsDateFormula3Visible;
                 }
                 field(DateFormula4; this.TempDynamicReqPageFields.DateFormula4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateFormula4;
-                    Visible = this.IsDateFormula4Visible;
                     ToolTip = 'Specifies the value of the DateFormula4 field.', Comment = '%';
+                    Visible = this.IsDateFormula4Visible;
                 }
                 field(DateFormula5; this.TempDynamicReqPageFields.DateFormula5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateFormula5;
-                    Visible = this.IsDateFormula5Visible;
                     ToolTip = 'Specifies the value of the DateFormula5 field.', Comment = '%';
+                    Visible = this.IsDateFormula5Visible;
                 }
-
                 field(DateTime1; this.TempDynamicReqPageFields.DateTime1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateTime1;
-                    Visible = this.IsDateTime1Visible;
                     ToolTip = 'Specifies the value of the DateTime1 field.', Comment = '%';
+                    Visible = this.IsDateTime1Visible;
                 }
                 field(DateTime2; this.TempDynamicReqPageFields.DateTime2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateTime2;
-                    Visible = this.IsDateTime2Visible;
                     ToolTip = 'Specifies the value of the DateTime2 field.', Comment = '%';
+                    Visible = this.IsDateTime2Visible;
                 }
                 field(DateTime3; this.TempDynamicReqPageFields.DateTime3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateTime3;
-                    Visible = this.IsDateTime3Visible;
                     ToolTip = 'Specifies the value of the DateTime3 field.', Comment = '%';
+                    Visible = this.IsDateTime3Visible;
                 }
                 field(DateTime4; this.TempDynamicReqPageFields.DateTime4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateTime4;
-                    Visible = this.IsDateTime4Visible;
                     ToolTip = 'Specifies the value of the DateTime4 field.', Comment = '%';
+                    Visible = this.IsDateTime4Visible;
                 }
                 field(DateTime5; this.TempDynamicReqPageFields.DateTime5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDateTime5;
-                    Visible = this.IsDateTime5Visible;
                     ToolTip = 'Specifies the value of the DateTime5 field.', Comment = '%';
+                    Visible = this.IsDateTime5Visible;
                 }
-
                 field(Decimal1; this.TempDynamicReqPageFields.Decimal1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDecimal1;
-                    Visible = this.IsDecimal1Visible;
                     ToolTip = 'Specifies the value of the Decimal1 field.', Comment = '%';
+                    Visible = this.IsDecimal1Visible;
                 }
                 field(Decimal2; this.TempDynamicReqPageFields.Decimal2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDecimal2;
-                    Visible = this.IsDecimal2Visible;
                     ToolTip = 'Specifies the value of the Decimal2 field.', Comment = '%';
+                    Visible = this.IsDecimal2Visible;
                 }
                 field(Decimal3; this.TempDynamicReqPageFields.Decimal3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDecimal3;
-                    Visible = this.IsDecimal3Visible;
                     ToolTip = 'Specifies the value of the Decimal3 field.', Comment = '%';
+                    Visible = this.IsDecimal3Visible;
                 }
                 field(Decimal4; this.TempDynamicReqPageFields.Decimal4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDecimal4;
-                    Visible = this.IsDecimal4Visible;
                     ToolTip = 'Specifies the value of the Decimal4 field.', Comment = '%';
+                    Visible = this.IsDecimal4Visible;
                 }
                 field(Decimal5; this.TempDynamicReqPageFields.Decimal5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDecimal5;
-                    Visible = this.IsDecimal5Visible;
                     ToolTip = 'Specifies the value of the Decimal5 field.', Comment = '%';
+                    Visible = this.IsDecimal5Visible;
                 }
-
                 field(Duration1; this.TempDynamicReqPageFields.Duration1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDuration1;
-                    Visible = this.IsDuration1Visible;
                     ToolTip = 'Specifies the value of the Duration1 field.', Comment = '%';
+                    Visible = this.IsDuration1Visible;
                 }
                 field(Duration2; this.TempDynamicReqPageFields.Duration2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDuration2;
-                    Visible = this.IsDuration2Visible;
                     ToolTip = 'Specifies the value of the Duration2 field.', Comment = '%';
+                    Visible = this.IsDuration2Visible;
                 }
                 field(Duration3; this.TempDynamicReqPageFields.Duration3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDuration3;
-                    Visible = this.IsDuration3Visible;
                     ToolTip = 'Specifies the value of the Duration3 field.', Comment = '%';
+                    Visible = this.IsDuration3Visible;
                 }
                 field(Duration4; this.TempDynamicReqPageFields.Duration4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDuration4;
-                    Visible = this.IsDuration4Visible;
                     ToolTip = 'Specifies the value of the Duration4 field.', Comment = '%';
+                    Visible = this.IsDuration4Visible;
                 }
                 field(Duration5; this.TempDynamicReqPageFields.Duration5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionDuration5;
-                    Visible = this.IsDuration5Visible;
                     ToolTip = 'Specifies the value of the Duration5 field.', Comment = '%';
+                    Visible = this.IsDuration5Visible;
                 }
-
                 field(Guid1; this.TempDynamicReqPageFields.Guid1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionGuid1;
-                    Visible = this.IsGuid1Visible;
                     ToolTip = 'Specifies the value of the Guid1 field.', Comment = '%';
+                    Visible = this.IsGuid1Visible;
                 }
                 field(Guid2; this.TempDynamicReqPageFields.Guid2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionGuid2;
-                    Visible = this.IsGuid2Visible;
                     ToolTip = 'Specifies the value of the Guid2 field.', Comment = '%';
+                    Visible = this.IsGuid2Visible;
                 }
                 field(Guid3; this.TempDynamicReqPageFields.Guid3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionGuid3;
-                    Visible = this.IsGuid3Visible;
                     ToolTip = 'Specifies the value of the Guid3 field.', Comment = '%';
+                    Visible = this.IsGuid3Visible;
                 }
                 field(Guid4; this.TempDynamicReqPageFields.Guid4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionGuid4;
-                    Visible = this.IsGuid4Visible;
                     ToolTip = 'Specifies the value of the Guid4 field.', Comment = '%';
+                    Visible = this.IsGuid4Visible;
                 }
                 field(Guid5; this.TempDynamicReqPageFields.Guid5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionGuid5;
-                    Visible = this.IsGuid5Visible;
                     ToolTip = 'Specifies the value of the Guid5 field.', Comment = '%';
+                    Visible = this.IsGuid5Visible;
                 }
-
                 field(Integer1; this.TempDynamicReqPageFields.Integer1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionInteger1;
-                    Visible = this.IsInteger1Visible;
                     ToolTip = 'Specifies the value of the Integer1 field.', Comment = '%';
+                    Visible = this.IsInteger1Visible;
                 }
                 field(Integer2; this.TempDynamicReqPageFields.Integer2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionInteger2;
-                    Visible = this.IsInteger2Visible;
                     ToolTip = 'Specifies the value of the Integer2 field.', Comment = '%';
+                    Visible = this.IsInteger2Visible;
                 }
                 field(Integer3; this.TempDynamicReqPageFields.Integer3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionInteger3;
-                    Visible = this.IsInteger3Visible;
                     ToolTip = 'Specifies the value of the Integer3 field.', Comment = '%';
+                    Visible = this.IsInteger3Visible;
                 }
                 field(Integer4; this.TempDynamicReqPageFields.Integer4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionInteger4;
-                    Visible = this.IsInteger4Visible;
                     ToolTip = 'Specifies the value of the Integer4 field.', Comment = '%';
+                    Visible = this.IsInteger4Visible;
                 }
                 field(Integer5; this.TempDynamicReqPageFields.Integer5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionInteger5;
-                    Visible = this.IsInteger5Visible;
                     ToolTip = 'Specifies the value of the Integer5 field.', Comment = '%';
+                    Visible = this.IsInteger5Visible;
                 }
-
                 field(Text1; this.TempDynamicReqPageFields.Text1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionText1;
-                    Visible = this.IsText1Visible;
                     ToolTip = 'Specifies the value of the Text1 field.', Comment = '%';
+                    Visible = this.IsText1Visible;
                 }
                 field(Text2; this.TempDynamicReqPageFields.Text2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionText2;
-                    Visible = this.IsText2Visible;
                     ToolTip = 'Specifies the value of the Text2 field.', Comment = '%';
+                    Visible = this.IsText2Visible;
                 }
                 field(Text3; this.TempDynamicReqPageFields.Text3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionText3;
-                    Visible = this.IsText3Visible;
                     ToolTip = 'Specifies the value of the Text3 field.', Comment = '%';
+                    Visible = this.IsText3Visible;
                 }
                 field(Text4; this.TempDynamicReqPageFields.Text4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionText4;
-                    Visible = this.IsText4Visible;
                     ToolTip = 'Specifies the value of the Text4 field.', Comment = '%';
+                    Visible = this.IsText4Visible;
                 }
                 field(Text5; this.TempDynamicReqPageFields.Text5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionText5;
-                    Visible = this.IsText5Visible;
                     ToolTip = 'Specifies the value of the Text5 field.', Comment = '%';
+                    Visible = this.IsText5Visible;
                 }
                 field(Time1; this.TempDynamicReqPageFields.Time1)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionTime1;
-                    Visible = this.IsTime1Visible;
                     ToolTip = 'Specifies the value of the Time1 field.', Comment = '%';
+                    Visible = this.IsTime1Visible;
                 }
                 field(Time2; this.TempDynamicReqPageFields.Time2)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionTime2;
-                    Visible = this.IsTime2Visible;
                     ToolTip = 'Specifies the value of the Time2 field.', Comment = '%';
+                    Visible = this.IsTime2Visible;
                 }
                 field(Time3; this.TempDynamicReqPageFields.Time3)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionTime3;
-                    Visible = this.IsTime3Visible;
                     ToolTip = 'Specifies the value of the Time3 field.', Comment = '%';
+                    Visible = this.IsTime3Visible;
                 }
                 field(Time4; this.TempDynamicReqPageFields.Time4)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionTime4;
-                    Visible = this.IsTime4Visible;
                     ToolTip = 'Specifies the value of the Time4 field.', Comment = '%';
+                    Visible = this.IsTime4Visible;
                 }
                 field(Time5; this.TempDynamicReqPageFields.Time5)
                 {
                     CaptionClass = this.TempDynamicReqPageFields.CaptionTime5;
-                    Visible = this.IsTime5Visible;
                     ToolTip = 'Specifies the value of the Time5 field.', Comment = '%';
+                    Visible = this.IsTime5Visible;
                 }
             }
         }
