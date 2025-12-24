@@ -191,7 +191,6 @@ table 50110 "ADD_DynamicReqPageFields"
         {
             Caption = 'Guid5';
         }
-
         field(100; Integer1; Integer)
         {
             Caption = 'Integer1';
@@ -212,7 +211,6 @@ table 50110 "ADD_DynamicReqPageFields"
         {
             Caption = 'Integer5';
         }
-
         field(110; Text1; Text[2048])
         {
             Caption = 'Text1';
@@ -233,7 +231,6 @@ table 50110 "ADD_DynamicReqPageFields"
         {
             Caption = 'Text5';
         }
-
         field(120; Time1; Time)
         {
             Caption = 'Time1';
