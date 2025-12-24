@@ -18,7 +18,6 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
                     trigger OnAction()
                     var
                         TempInValues: Record ADD_DynamicReqPageFields temporary;
-                        TempOutValues: Record ADD_DynamicReqPageFields temporary;
                         DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
                     begin
                         TempInValues.Init();
@@ -30,9 +29,10 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
                         TempInValues.CaptionBigInteger2 := 'Big number 2';
                         TempInValues.CaptionDate1 := 'Date of sth';
                         TempInValues.CaptionTime1 := 'Curr time';
-                        TempInValues.Insert();
-                        DynamicReqPageMgt.RunReqPage(TempInValues, TempOutValues);
-                        Message(Format(TempOutValues));
+                        TempInValues.Insert(true);
+
+                        DynamicReqPageMgt.RunReqPage(TempInValues);
+                        Message(Format(TempInValues));
                     end;
                 }
             }

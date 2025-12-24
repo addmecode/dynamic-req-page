@@ -1,47 +1,46 @@
 codeunit 50110 "ADD_DynamicRequestPageMgt"
 {
-    procedure RunReqPage(InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
+    procedure RunReqPage(var InValues: Record ADD_DynamicReqPageFields temporary)
     var
-        DynamicReqPage: Report ADD_DynamicRequestPage;
-        ReportParams: Text;
+        DynamicReqPage: Page ADD_DynamicReqPage;
     begin
-        DynamicReqPage.SetTempAllFields(InValues);
-        ReportParams := DynamicReqPage.RunRequestPage(ReportParams);
-        this.GetValuesFromRequestPage(ReportParams, InValues, OutValues);
+        DynamicReqPage.SetTempRecord(InValues);
+        DynamicReqPage.RunModal();
+        DynamicReqPage.GetTempRecord(InValues);
     end;
 
-    procedure GetValuesFromRequestPage(ReqPageParams: Text; InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
-    var
-        FieldNodes: XmlNodeList;
-        SingleFieldNode: XmlNode;
-        FieldName: Text;
-        FieldValue: Text;
-    begin
-        OutValues.Init();
-        if ReqPageParams = '' then
-            exit;
-        this.GetFieldNodesFromReqPageParams(ReqPageParams, FieldNodes);
-        foreach SingleFieldNode in FieldNodes do begin
-            this.GetFieldNameAndValueFromFieldNode(SingleFieldNode, FieldName, FieldValue);
-            this.SetValueFromReqPageToRec(FieldName, FieldValue, InValues, OutValues);
-        end;
-        OutValues.Insert();
-    end;
-
-    local procedure SetValueFromReqPageToRec(FieldName: Text; FieldValue: Text; InValues: Record ADD_DynamicReqPageFields temporary; var OutValues: Record ADD_DynamicReqPageFields temporary)
+    procedure IsFieldSetByName(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldName: Text): Boolean
     var
         DataTypeMgt: Codeunit "Data Type Management";
         RecRef: RecordRef;
-        FldRef: FieldRef;
+        CaptFldRef: FieldRef;
+        CaptFldName: Text;
+        CaptFldValue: Text;
     begin
-        DataTypeMgt.GetRecordRef(OutValues, RecRef);
-        DataTypeMgt.FindFieldByName(RecRef, FldRef, FieldName);
-        if not InValues.IsFieldSetByName(FldRef.Name) then
-            exit;
-
-        this.ValidateFieldFromText(FldRef, FieldValue);
-        RecRef.SetTable(OutValues);
+        CaptFldName := 'Caption' + FieldName;
+        DataTypeMgt.GetRecordRef(DynamicReqPageFields, RecRef);
+        DataTypeMgt.FindFieldByName(RecRef, CaptFldRef, CaptFldName);
+        CaptFldValue := CaptFldRef.Value;
+        exit(CaptFldValue <> '');
     end;
+
+    internal procedure SetLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary)
+    begin
+        if DynamicReqPageFields."Entry No." <> 0 then
+            exit;
+        DynamicReqPageFields."Entry No." := this.FindLastEntryNoDynamicReqPageFields(DynamicReqPageFields);
+    end;
+
+    internal procedure FindLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary): Integer
+    var
+        LastRec: Record "ADD_DynamicReqPageFields";
+    begin
+        LastRec.Copy(DynamicReqPageFields, true);
+        if LastRec.FindLast() then
+            exit(LastRec."Entry No." + 1);
+        exit(1);
+    end;
+
 
     local procedure ValidateFieldFromText(var FldRef: FieldRef; FieldValue: Text)
     var
@@ -117,41 +116,5 @@ codeunit 50110 "ADD_DynamicRequestPageMgt"
             else
                 Error('Unsupported field type %1 in field: (%2).', Format(FldRef.Type), FldRef.Name);
         end;
-    end;
-
-
-    local procedure GetFieldNameAndValueFromFieldNode(FieldNode: XmlNode; var FieldName: Text; var FieldValue: Text)
-    var
-        XmlAttrColl: XmlAttributeCollection;
-        XmlAttr: XmlAttribute;
-    begin
-        XmlAttrColl := FieldNode.AsXmlElement().Attributes();
-        XmlAttrColl.Get('name', XmlAttr);
-        FieldName := XmlAttr.Value();
-        FieldName := FieldName.Substring(FieldName.IndexOf('.') + 1);
-        FieldValue := FieldNode.AsXmlElement().InnerText();
-    end;
-
-    local procedure GetFieldNodesFromReqPageParams(ReqPageParams: Text; var FieldNodes: XmlNodeList)
-    var
-        XmlDoc: XmlDocument;
-    begin
-        XmlDocument.ReadFrom(ReqPageParams, XmlDoc);
-        XmlDoc.SelectNodes('//Options//Field', FieldNodes);
-    end;
-
-    procedure IsFieldSetByName(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldName: Text): Boolean
-    var
-        DataTypeMgt: Codeunit "Data Type Management";
-        RecRef: RecordRef;
-        CaptFldRef: FieldRef;
-        CaptFldName: Text;
-        CaptFldValue: Text;
-    begin
-        CaptFldName := 'Caption' + FieldName;
-        DataTypeMgt.GetRecordRef(DynamicReqPageFields, RecRef);
-        DataTypeMgt.FindFieldByName(RecRef, CaptFldRef, CaptFldName);
-        CaptFldValue := CaptFldRef.Value;
-        exit(CaptFldValue <> '');
     end;
 }

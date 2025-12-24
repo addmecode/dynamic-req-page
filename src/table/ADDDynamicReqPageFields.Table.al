@@ -9,7 +9,7 @@ table 50110 "ADD_DynamicReqPageFields"
         field(1; "Entry No."; Integer)
         {
             Caption = 'Entry No.';
-            AutoIncrement = true;
+            NotBlank = true;
         }
         field(10; BigInteger1; BigInteger)
         {
@@ -500,6 +500,18 @@ table 50110 "ADD_DynamicReqPageFields"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        this.SetLastEntryNo()
+    end;
+
+    local procedure SetLastEntryNo()
+    var
+        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
+    begin
+        DynamicReqPageMgt.SetLastEntryNoDynamicReqPageFields(Rec);
+    end;
 
     procedure IsFieldSetByName(FieldName: Text): Boolean
     var
