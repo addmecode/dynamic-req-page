@@ -394,6 +394,7 @@ page 50100 "ADD_DynamicReqPage"
     trigger OnOpenPage()
     begin
         this.SetFieldsVisibility();
+        this.SetCaption();
     end;
 
     var
@@ -467,6 +468,12 @@ page 50100 "ADD_DynamicReqPage"
     procedure GetTempRecord(var TempDynamicReqPageFieldsToGet: Record ADD_DynamicReqPageFields temporary)
     begin
         TempDynamicReqPageFieldsToGet := this.TempDynamicReqPageFields;
+    end;
+
+    local procedure SetCaption()
+    begin
+        if this.TempDynamicReqPageFields.Caption <> '' then
+            CurrPage.Caption := this.TempDynamicReqPageFields.Caption
     end;
 
     local procedure SetFieldsVisibility()

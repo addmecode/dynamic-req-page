@@ -11,6 +11,10 @@ table 50110 "ADD_DynamicReqPageFields"
             Caption = 'Entry No.';
             NotBlank = true;
         }
+        field(2; Caption; Text[2048])
+        {
+            Caption = 'Caption';
+        }
         field(10; BigInteger1; BigInteger)
         {
             Caption = 'BigInteger1';

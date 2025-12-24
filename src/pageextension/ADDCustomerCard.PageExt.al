@@ -29,6 +29,7 @@ pageextension 50110 "ADD_CustomerCard" extends "Customer Card"
                         TempInValues.CaptionBigInteger2 := 'Big number 2';
                         TempInValues.CaptionDate1 := 'Date of sth';
                         TempInValues.CaptionTime1 := 'Curr time';
+                        TempInValues.Caption := 'Provide data';
                         TempInValues.Insert(true);
 
                         DynamicReqPageMgt.RunReqPage(TempInValues);
