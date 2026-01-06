@@ -1,4 +1,4 @@
-page 50100 ADD_DynamicReqPage
+page 50106 "ADD_DynamicReqPage"
 {
     ApplicationArea = All;
     Caption = 'Dynamic Request Page';
