@@ -1,4 +1,4 @@
-table 50110 ADD_DynamicReqPageFields
+table 50103 "ADD_DynamicReqPageFields"
 {
     Caption = 'Dynamic Req Page Fields';
     DataClassification = CustomerContent;
