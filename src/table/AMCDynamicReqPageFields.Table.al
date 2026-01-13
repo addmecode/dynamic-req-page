@@ -1,4 +1,4 @@
-table 50103 "ADD_DynamicReqPageFields"
+table 50103 "AMC DynamicReqPageFields"
 {
     Caption = 'Dynamic Req Page Fields';
     DataClassification = CustomerContent;
@@ -511,14 +511,14 @@ table 50103 "ADD_DynamicReqPageFields"
 
     local procedure SetLastEntryNo()
     var
-        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
+        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
     begin
         DynamicReqPageMgt.SetLastEntryNoDynamicReqPageFields(Rec);
     end;
 
     procedure IsFieldSetByName(FieldName: Text): Boolean
     var
-        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
+        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
     begin
         exit(DynamicReqPageMgt.IsFieldSetByName(Rec, FieldName));
     end;

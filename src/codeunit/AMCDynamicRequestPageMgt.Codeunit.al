@@ -1,15 +1,15 @@
-codeunit 50103 "ADD_DynamicRequestPageMgt"
+codeunit 50103 "AMC DynamicRequestPageMgt"
 {
-    procedure RunReqPage(var InValues: Record ADD_DynamicReqPageFields temporary)
+    procedure RunReqPage(var InValues: Record "AMC DynamicReqPageFields" temporary)
     var
-        DynamicReqPage: Page ADD_DynamicReqPage;
+        DynamicReqPage: Page "AMC DynamicReqPage";
     begin
         DynamicReqPage.SetTempRecord(InValues);
         DynamicReqPage.RunModal();
         DynamicReqPage.GetTempRecord(InValues);
     end;
 
-    procedure IsFieldSetByName(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary; FieldName: Text): Boolean
+    procedure IsFieldSetByName(var DynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary; FieldName: Text): Boolean
     var
         DataTypeMgt: Codeunit "Data Type Management";
         RecRef: RecordRef;
@@ -24,16 +24,16 @@ codeunit 50103 "ADD_DynamicRequestPageMgt"
         exit(CaptFldValue <> '');
     end;
 
-    internal procedure SetLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary)
+    internal procedure SetLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary)
     begin
         if DynamicReqPageFields."Entry No." <> 0 then
             exit;
         DynamicReqPageFields."Entry No." := this.FindLastEntryNoDynamicReqPageFields(DynamicReqPageFields);
     end;
 
-    internal procedure FindLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record ADD_DynamicReqPageFields temporary): Integer
+    internal procedure FindLastEntryNoDynamicReqPageFields(var DynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary): Integer
     var
-        LastRec: Record ADD_DynamicReqPageFields;
+        LastRec: Record "AMC DynamicReqPageFields";
     begin
         LastRec.Copy(DynamicReqPageFields, true);
         if LastRec.FindLast() then

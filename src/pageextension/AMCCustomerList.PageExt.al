@@ -1,10 +1,10 @@
-pageextension 50100 "ADD_CustomerList" extends "Customer List"
+pageextension 50100 "AMC CustomerList" extends "Customer List"
 {
     actions
     {
         addafter("Customer - Order Summary")
         {
-            action(ADDGetCustomersListWithProvidedPaymDisc)
+            action("AMC GetCustomersListWithProvidedPaymDisc")
             {
                 ApplicationArea = All;
                 Caption = 'Get Customers List With Provided Payment Disc';
@@ -19,14 +19,14 @@ pageextension 50100 "ADD_CustomerList" extends "Customer List"
         }
         addafter("Customer - Order Summary_Promoted")
         {
-            actionref(ADDGetCustomersListWithProvidedPaymDisc_Promoted; ADDGetCustomersListWithProvidedPaymDisc) { }
+            actionref(ADDGetCustomersListWithProvidedPaymDisc_Promoted; "AMC GetCustomersListWithProvidedPaymDisc") { }
         }
     }
 
     local procedure GetCustomersListWithProvidedPaymDiscQst()
     var
-        TempDynamicReqPageFields: Record ADD_DynamicReqPageFields temporary;
-        DynamicReqPageMgt: Codeunit ADD_DynamicRequestPageMgt;
+        TempDynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary;
+        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
     begin
         TempDynamicReqPageFields.Init();
         TempDynamicReqPageFields.Caption := 'Get Customers list with provided Payment Discount';

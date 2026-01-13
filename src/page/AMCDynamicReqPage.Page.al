@@ -1,4 +1,4 @@
-page 50106 "ADD_DynamicReqPage"
+page 50106 "AMC DynamicReqPage"
 {
     ApplicationArea = All;
     Caption = 'Dynamic Request Page';
@@ -7,7 +7,7 @@ page 50106 "ADD_DynamicReqPage"
     InsertAllowed = false;
     ModifyAllowed = true;
     PageType = Card;
-    SourceTable = ADD_DynamicReqPageFields;
+    SourceTable = "AMC DynamicReqPageFields";
     SourceTableTemporary = true;
 
     layout
@@ -388,7 +388,7 @@ page 50106 "ADD_DynamicReqPage"
     end;
 
     var
-        TempDynamicReqPageFields: Record ADD_DynamicReqPageFields temporary;
+        TempDynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary;
         IsBigInteger1Visible: Boolean;
         IsBigInteger2Visible: Boolean;
         IsBigInteger3Visible: Boolean;
@@ -450,12 +450,12 @@ page 50106 "ADD_DynamicReqPage"
         IsTime4Visible: Boolean;
         IsTime5Visible: Boolean;
 
-    procedure SetTempRecord(var TempDynamicReqPageFieldsToSet: Record ADD_DynamicReqPageFields temporary)
+    procedure SetTempRecord(var TempDynamicReqPageFieldsToSet: Record "AMC DynamicReqPageFields" temporary)
     begin
         this.TempDynamicReqPageFields := TempDynamicReqPageFieldsToSet;
     end;
 
-    procedure GetTempRecord(var TempDynamicReqPageFieldsToGet: Record ADD_DynamicReqPageFields temporary)
+    procedure GetTempRecord(var TempDynamicReqPageFieldsToGet: Record "AMC DynamicReqPageFields" temporary)
     begin
         TempDynamicReqPageFieldsToGet := this.TempDynamicReqPageFields;
     end;
