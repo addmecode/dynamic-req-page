@@ -1,6 +1,6 @@
-table 50103 "AMC DynamicReqPageFields"
+table 50103 "AMC Dynamic Req Page Fields"
 {
-    Caption = 'Dynamic Req Page Fields';
+    Caption = 'Dynamic Request Page Fields';
     DataClassification = CustomerContent;
     TableType = Temporary;
 
@@ -506,20 +506,25 @@ table 50103 "AMC DynamicReqPageFields"
 
     trigger OnInsert()
     begin
-        this.SetLastEntryNo()
+        this.SetLastEntryNo();
     end;
 
     local procedure SetLastEntryNo()
     var
-        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
+        DynamicRequestPageMgt: Codeunit "AMC Dynamic Request Page Mgt";
     begin
-        DynamicReqPageMgt.SetLastEntryNoDynamicReqPageFields(Rec);
+        DynamicRequestPageMgt.SetLastEntryNoDynamicRequestFields(Rec);
     end;
 
+    /// <summary>
+    /// Returns true when the caption field for the provided field name is set.
+    /// </summary>
+    /// <param name="FieldName">The field name to check.</param>
+    /// <returns>True if the caption field contains a value; otherwise false.</returns>
     procedure IsFieldSetByName(FieldName: Text): Boolean
     var
-        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
+        DynamicRequestPageMgt: Codeunit "AMC Dynamic Request Page Mgt";
     begin
-        exit(DynamicReqPageMgt.IsFieldSetByName(Rec, FieldName));
+        exit(DynamicRequestPageMgt.IsFieldSetByName(Rec, FieldName));
     end;
 }

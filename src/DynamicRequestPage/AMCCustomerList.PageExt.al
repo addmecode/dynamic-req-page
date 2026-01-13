@@ -1,4 +1,4 @@
-pageextension 50100 "AMC CustomerList" extends "Customer List"
+pageextension 50100 "AMC Customer List" extends "Customer List"
 {
     actions
     {
@@ -25,8 +25,8 @@ pageextension 50100 "AMC CustomerList" extends "Customer List"
 
     local procedure GetCustomersListWithProvidedPaymDiscQst()
     var
-        TempDynamicReqPageFields: Record "AMC DynamicReqPageFields" temporary;
-        DynamicReqPageMgt: Codeunit "AMC DynamicRequestPageMgt";
+        TempDynamicReqPageFields: Record "AMC Dynamic Req Page Fields" temporary;
+        DynamicRequestPageMgt: Codeunit "AMC Dynamic Request Page Mgt";
     begin
         TempDynamicReqPageFields.Init();
         TempDynamicReqPageFields.Caption := 'Get Customers list with provided Payment Discount';
@@ -35,7 +35,7 @@ pageextension 50100 "AMC CustomerList" extends "Customer List"
         TempDynamicReqPageFields.CaptionDecimal2 := 'Discount % <=';
         TempDynamicReqPageFields.Decimal2 := 5;
         TempDynamicReqPageFields.Insert(true);
-        DynamicReqPageMgt.RunReqPage(TempDynamicReqPageFields);
+        DynamicRequestPageMgt.RunReqPage(TempDynamicReqPageFields);
 
         GetCustomersListWithProvidedPaymDisc(TempDynamicReqPageFields.Decimal1, TempDynamicReqPageFields.Decimal2);
     end;
